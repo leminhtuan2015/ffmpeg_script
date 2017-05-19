@@ -1,0 +1,39 @@
+<script>
+	var s = document.createElement("script");
+	s.type = "text/javascript";
+	s.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js";
+	$("head").append(s);
+  document.getElementsByTagName('head')[0].appendChild(s);
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+  console.log("Get YT")
+
+  var ids = []
+  var idsString = ""
+
+  $('div#watch-description a').each(function () { 
+      console.log("Data")
+
+      var link = $(this).attr("href")
+
+      console.log(link)
+      
+      if(link.includes("http")
+        && !link.includes("bit.ly") 
+        && !link.includes("jukinmedia.com")
+        && !link.includes("vk.com")
+        && !link.includes("youtube.com/channel")
+        && !link.includes("reddit.com")){
+          ids.push(link)
+          idsString = idsString.concat("\"" + link + "\", ")
+      }
+  });
+
+  console.log(ids)
+  console.log(idsString)
+
+</script>
