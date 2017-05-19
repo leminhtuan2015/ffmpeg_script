@@ -1,0 +1,14 @@
+#Remove Audio From Video: 
+
+./ffmpeg -i B.mov -c copy -an B1.mov
+
+
+#Add Audio to Video:
+
+ffmpeg -i videos/B1.mov -i videos/7838967.LOFI.mp3 -codec copy videos/C.mov
+
+#Watermark
+
+ffmpeg -i B1.mov -i logo.jpeg -filter_complex \
+"overlay=main_w-overlay_w-5:5" \
+-codec:a copy output.mp4
